@@ -139,7 +139,15 @@ async def start(client, message):
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
+                    reply_markup=InlineKeyboardMarkup(
+                          [
+                           [
+                            InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍', url=f"https://t.me/+fAHy3KCjmtthOWRl"),
+                            InlineKeyboardButton('𝑩𝒐𝒕 𝑮𝒓𝒐𝒖𝒑', url=f"https://t.me/mallu_movie_search")
+                          ]
+                        ]
                     )
+                )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
