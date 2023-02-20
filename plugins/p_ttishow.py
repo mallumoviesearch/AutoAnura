@@ -54,16 +54,24 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_video(
-                video="https://telegra.ph/file/1f47ebb7be325dd5f2a29.mp4",                                               
+                                                 video="https://telegra.ph/file/1f47ebb7be325dd5f2a29.mp4",
                                                  caption=f'<b>ʜᴇʏ, {u.mention} 👋🏻\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴏᴜʀ ɢʀᴏᴜᴘ {message.chat.title}\n\nʏᴏᴜ ᴄᴀɴ ꜰɪɴᴅ ᴍᴏᴠɪᴇꜱ / ꜱᴇʀɪᴇꜱ / ᴀɴɪᴍᴇꜱ ᴇᴛᴄ. ꜰʀᴏᴍ ʜᴇʀᴇ. ᴇɴᴊᴏʏ😉.</b>',
-                                                 reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍', url='https://t.me/+fAHy3KCjmtthOWRl') ] ] )
-                ),
-                parse_mode=enums.ParseMode.HTML
+                                                 reply_markup=InlineKeyboardMarkup(
+                                                                         [[
+                                                                           InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍', url=f"https://t.me/+fAHy3KCjmtthOWRl"),
+                                                                          ],
+                                                                          [
+                                                                           InlineKeyboardButton(f'𝐈𝐧𝐟𝐨', 'minfo'),
+                                                                          ]
+                                                                          ]
+                                                 ),
+                                                 parse_mode=enums.ParseMode.HTML
                 )
                 
         if settings["auto_delete"]:
             await asyncio.sleep(70)
             await (temp.MELCOW['welcome']).delete()
+
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
