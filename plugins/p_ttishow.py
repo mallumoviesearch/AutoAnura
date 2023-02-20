@@ -68,7 +68,6 @@ async def save_group(bot, message):
                                                  parse_mode=enums.ParseMode.HTML
                 )
                 
-        if settings["auto_delete"]:
             await asyncio.sleep(70)
             await (temp.MELCOW['welcome']).delete()
 
