@@ -42,10 +42,7 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'sources_cods')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), False)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b><i>{file_name} » {file_size} › ╭━━━━━━━━━━━━━━━➣
-┣⪼𝐺𝑅𝑂𝑈𝑃
-┣⪼ @MALLU_MOVIE_SEARCH
-╰━━━━━━━━━━━━━━━➣ </i></b>")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b><i>{file_name} » {file_size} ›</i></b>")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<b><i>{file_name} » {file_size} ›@MALLU_MOVIE_SEARCH")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>🎬 Title: <a href={url}>{title}</a>\n<b>🗓 Year: {year}\n<b>🔊 Language:<a href={url}/ratings>{languages}</a>\n<b>💿 Quality : HDRip\n\n<b> 🔗 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗟𝗜𝗡𝗞 ☞")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
