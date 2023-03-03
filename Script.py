@@ -119,7 +119,12 @@ This module only works for my admins
 🔗 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗟𝗜𝗡𝗞 ☞
 """
     CAPTION = """
-<b>📂 Fɪʟᴇ ɴᴀᴍᴇ : </b> <code>{file_name}</code>
+{file_name}
+╭━━━━━━━━━━━━━━━➣
+┣⪼𝐺𝑅𝑂𝑈𝑃
+┣⪼ @MALLU_MOVIE_SEARCH
+┣⪼𝐹𝐼𝐿𝐸 𝑆𝐼𝑍𝐸:{file_size}
+╰━━━━━━━━━━━━━━━➣
 """
     FOND_TXT = """☾︎𝗛𝗘𝗟𝗣 𝗙𝗢𝗥 𝗙𝗢𝗡𝗧𝗦☽︎
 𝙵𝙾𝙽𝚃 𝙸𝚂 𝙰 𝙼𝙾𝙳𝚄𝙻𝙴 𝙵𝙾𝚁 𝙼𝙰𝙺𝙴 𝚈𝙾𝚄𝚁 𝚃𝙴𝚇𝚃 𝚂𝚃𝚈𝙻𝙸𝚂𝙷.
