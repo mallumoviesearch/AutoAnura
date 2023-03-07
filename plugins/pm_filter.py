@@ -21,7 +21,6 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 import os 
 import humanize
-from PIL import Image
 import time
 from database.filters_mdb import (
     del_all,
