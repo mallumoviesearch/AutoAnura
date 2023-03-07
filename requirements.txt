@@ -13,3 +13,4 @@ pynewtonmath
 pytz
 aiohttp
 humanize
+hachoir
