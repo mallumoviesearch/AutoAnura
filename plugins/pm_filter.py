@@ -89,7 +89,7 @@ async def rename(bot,update):
 	await update.message.delete()
 	await update.message.reply_text("»»——— 𝙋𝙡𝙚𝙖𝙨𝙚 𝙚𝙣𝙩𝙚𝙧 𝙣𝙚𝙬 𝙛𝙞𝙡𝙚 𝙣𝙖𝙢𝙚...",	
 	reply_to_message_id=update.message.reply_to_message.id,  
-	reply_markup=ForceReply(True))  
+	reply_markup=ForceReply(False))  
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex("upload"))
 async def doc(bot, update):
