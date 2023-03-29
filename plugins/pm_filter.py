@@ -229,9 +229,15 @@ async def next_page(bot, query):
             for file in files
         ]
 
-    btn.insert(0,
+    btn.insert(0, 
         [
-            InlineKeyboardButton(text="𝑴𝒐𝒗𝒊𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍", url='https://t.me/+fAHy3KCjmtthOWRl')
+            InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍', url='https://t.me/+fAHy3KCjmtthOWRl')
+        ]
+    )
+    btn.insert(1, 
+        [
+            InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/mallu_movie_search'),
+            InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', url='http://t.me/Musictvua')
         ]
     )
 
