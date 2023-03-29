@@ -14,3 +14,6 @@ pytz
 aiohttp
 humanize
 hachoir
+Pillow
+aiofiles
+dnspython 
