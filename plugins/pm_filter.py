@@ -131,7 +131,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"▫️ {get_size(file.file_size)} ⊳ {file.file_name}", callback_data=f'files#{file.file_id}'
+                        text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
                     ),
                 ]
                 for file in files
@@ -241,16 +241,16 @@ async def next_page(bot, query):
                 off_set = offset - 10
             if n_offset == 0:
                 btn.append(
-                    [InlineKeyboardButton("⌫ ʙᴀᴄᴋ​", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages")]
+                    [InlineKeyboardButton("⌫ 𝐁𝐀𝐂𝐊", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages")]
                 )
             elif off_set is None:
-                btn.append([InlineKeyboardButton("📚 ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"), InlineKeyboardButton("ɴᴇxᴛ ​⌦", callback_data=f"next_{req}_{key}_{n_offset}")])
+                btn.append([InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"), InlineKeyboardButton("ɴᴇxᴛ ​⌦", callback_data=f"next_{req}_{key}_{n_offset}")])
             else:
                 btn.append(
                     [
-                        InlineKeyboardButton("⌫ ʙᴀᴄᴋ​", callback_data=f"next_{req}_{key}_{off_set}"),
+                        InlineKeyboardButton("⌫ 𝐁𝐀𝐂𝐊", callback_data=f"next_{req}_{key}_{off_set}"),
                         InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"),
-                        InlineKeyboardButton("ɴᴇxᴛ ⌦", callback_data=f"next_{req}_{key}_{n_offset}")
+                        InlineKeyboardButton("𝐍𝐄𝐗𝐓 ➪", callback_data=f"next_{req}_{key}_{n_offset}")
                     ],
                 )
         else:
@@ -262,20 +262,20 @@ async def next_page(bot, query):
                 off_set = offset - int(MAX_B_TN)
             if n_offset == 0:
                 btn.append(
-                    [InlineKeyboardButton("⌫ ʙᴀᴄᴋ​", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages")]
+                    [InlineKeyboardButton("⌫ 𝐁𝐀𝐂𝐊", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages")]
                 )
             elif off_set is None:
-                btn.append([InlineKeyboardButton("📚 ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages"), InlineKeyboardButton("ɴᴇxᴛ ​⌦", callback_data=f"next_{req}_{key}_{n_offset}")])
+                btn.append([InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages"), InlineKeyboardButton("ɴᴇxᴛ ​⌦", callback_data=f"next_{req}_{key}_{n_offset}")])
             else:
                 btn.append(
                     [
-                        InlineKeyboardButton("⌫ ʙᴀᴄᴋ​", callback_data=f"next_{req}_{key}_{off_set}"),
+                        InlineKeyboardButton("⌫ 𝐁𝐀𝐂𝐊​", callback_data=f"next_{req}_{key}_{off_set}"),
                         InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages"),
-                        InlineKeyboardButton("ɴᴇxᴛ​ ⌦", callback_data=f"next_{req}_{key}_{n_offset}")
+                        InlineKeyboardButton("𝐍𝐄𝐗𝐓 ➪", callback_data=f"next_{req}_{key}_{n_offset}")
                     ],
                 )
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
+        InlineKeyboardButton(" ʟᴀɴɢᴜᴀɢᴇs ", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
 #        InlineKeyboardButton(f"🔍 {search} 🔎", callback_data="imdb1")
     ])
     try:
@@ -488,7 +488,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             )
 
     btn.insert(0, [
-        InlineKeyboardButton("! PM !", url="http://t.me/rokeyv_bot")
+        InlineKeyboardButton("! PM !", url="http://t.me/rokeyv2_bot")
     ])
     offset = 0
 
@@ -834,10 +834,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                  InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                  InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                  InlineKeyboardButton('Gʀᴏᴜᴘ', url="https://t.me/mallu_movie_search"),
+                  InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url="https://t.me/+fAHy3KCjmtthOWRl")
                ],[
-                  InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/uygyhgygyu")
+                  InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="http://t.me/Musictvua")
                  ]
                 ]
             )
@@ -2514,7 +2514,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"▫️ {get_size(file.file_size)} ⊳ {file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"[{get_size(file.file_size)}] {file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -2597,7 +2597,7 @@ async def auto_filter(client, msg, spoll=False):
             )
 
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
+        InlineKeyboardButton(" ʟᴀɴɢᴜᴀɢᴇs ", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
     ])
 
     if offset != "":
@@ -2608,26 +2608,26 @@ async def auto_filter(client, msg, spoll=False):
             settings = await get_settings(message.chat.id)
             if settings['max_btn']:
                 btn.append(
-                    [InlineKeyboardButton("📚 ᴘᴀɢᴇ​", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⌦",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄​", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⌦",callback_data=f"next_{req}_{key}_{offset}")]
                 )
             else:
                 btn.append(
-                    [InlineKeyboardButton("📚 ᴘᴀɢᴇ​", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⌦",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⌦",callback_data=f"next_{req}_{key}_{offset}")]
                 )
         except KeyError:
             await save_group_settings(message.chat.id, 'max_btn', False)
             settings = await get_settings(message.chat.id)
             if settings['max_btn']:
                 btn.append(
-                    [InlineKeyboardButton("📚 ᴘᴀɢᴇ​", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⌦",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄​", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⌦",callback_data=f"next_{req}_{key}_{offset}")]
                 )
             else:
                 btn.append(
-                    [InlineKeyboardButton("📚 ᴘᴀɢᴇ​", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ​⌦",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄​", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ​⌦",callback_data=f"next_{req}_{key}_{offset}")]
                 )
     else:
         btn.append(
-            [InlineKeyboardButton(text="♨️ ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇs ᴀᴠᴀɪʟᴀʙʟᴇ ♨️",callback_data="pages")]
+            [InlineKeyboardButton(text=" ɴo ᴘᴀɢᴇs ",callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
