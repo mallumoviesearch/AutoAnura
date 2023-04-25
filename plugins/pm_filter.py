@@ -833,14 +833,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             protect_content=True if ident == 'checksubp' else False,
             reply_markup=InlineKeyboardMarkup(
                 reply_markup=InlineKeyboardMarkup(
-                          [
-                           [
-                            InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍', url=f"https://t.me/+fAHy3KCjmtthOWRl"),
-                            InlineKeyboardButton('𝑩𝒐𝒕 𝑮𝒓𝒐𝒖𝒑', url=f"https://t.me/mallu_movie_search")
-                          ]
-                        ]
-                    )
-                )
+                            [
+                             [
+                              InlineKeyboardButton('Gʀᴏᴜᴘ', url="https://t.me/mallu_movie_search"),
+                              InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url="https://t.me/+fAHy3KCjmtthOWRl")
+                           ],[
+                              InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="http://t.me/Musictvua")
+                             ]
+                            ]
+                        )
     elif query.data == "pages":
         await query.answer()
 
