@@ -832,7 +832,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False,
             reply_markup=InlineKeyboardMarkup(
-                reply_markup=InlineKeyboardMarkup(
                             [
                              [
                               InlineKeyboardButton('Gʀᴏᴜᴘ', url="https://t.me/mallu_movie_search"),
