@@ -1,6 +1,6 @@
-#https://github.com/AM-ROBOTS
+# https://github.com/odysseusmax/animated-lamp/blob/master/bot/database/database.py
 import motor.motor_asyncio
-from info import DATABASE_NAME, DATABASE_URI, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, MAX_BTN
+from info import DATABASE_NAME, DATABASE_URI, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK
 
 class Database:
     
@@ -21,7 +21,6 @@ class Database:
             ),
         )
 
-
     def new_group(self, id, title):
         return dict(
             id = id,
@@ -31,6 +30,23 @@ class Database:
                 reason="",
             ),
         )
+    
+    async def update_verification(self, id, date, time):
+        status = {
+            'date': str(date),
+            'time': str(time)
+        }
+        await self.col.update_one({'id': int(id)}, {'$set': {'verification_status': status}})
+
+    async def get_verified(self, id):
+        default = {
+            'date': "1999-12-31",
+            'time': "23:59:59"
+        }
+        user = await self.col.find_one({'id': int(id)})
+        if user:
+            return user.get("verification_status", default)
+        return default
     
     async def add_user(self, id, name):
         user = self.new_user(id, name)
@@ -114,8 +130,13 @@ class Database:
             'imdb': IMDB,
             'spell_check': SPELL_CHECK_REPLY,
             'welcome': MELCOW_NEW_USERS,
+            'auto_delete': AUTO_DELETE,
+            'auto_ffilter': AUTO_FFILTER,
             'max_btn': MAX_BTN,
-            'template': IMDB_TEMPLATE
+            'template': IMDB_TEMPLATE,
+            'shortlink': SHORTLINK_URL,
+            'shortlink_api': SHORTLINK_API,
+            'is_shortlink': IS_SHORTLINK
         }
         chat = await self.grp.find_one({'id':int(id)})
         if chat:
@@ -142,33 +163,5 @@ class Database:
 
     async def get_db_size(self):
         return (await self.db.command("dbstats"))['dataSize']
-    
-    # Credit @LazyDeveloper.
-    # Please Don't remove credit.
-        # Born to make history @LazyDeveloper ! => Remember this name forever <=
-
-    # Thank you LazyDeveloper for helping us in this Journey
-
-    async def set_thumbnail(self, id, file_id):
-        await self.col.update_one({'id': int(id)}, {'$set': {'file_id': file_id}})
-        
-    async def get_thumbnail(self, id):
-        try:
-            thumbnail = await self.col.find_one({'id': int(id)})
-            if thumbnail:
-                return thumbnail.get('file_id')
-            else:
-                return None
-        except Exception as e:
-            print(e)
-    # Born to make history @LazyDeveloper ! => Remember this name forever <=
-
-    async def set_caption(self, id, caption):
-        await self.col.update_one({'id': int(id)}, {'$set': {'caption': caption}})
-
-    async def get_caption(self, id):
-        user = await self.col.find_one({'id': int(id)})
-        return user.get('caption', None)
-
 
 db = Database(DATABASE_URI, DATABASE_NAME)
