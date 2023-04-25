@@ -832,15 +832,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False,
             reply_markup=InlineKeyboardMarkup(
-                            [
-                             [
-                              InlineKeyboardButton('Gʀᴏᴜᴘ', url="https://t.me/mallu_movie_search"),
-                              InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url="https://t.me/+fAHy3KCjmtthOWRl")
-                           ],[
-                              InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="http://t.me/Musictvua")
-                             ]
-                            ]
-                        )
+                [
+                 [
+                  InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
+                  InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+               ],[
+                  InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/uygyhgygyu")
+                 ]
+                ]
+            )
+        )
     elif query.data == "pages":
         await query.answer()
 
