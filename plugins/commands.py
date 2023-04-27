@@ -40,8 +40,11 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('⚚ J̳O̳I̳N̳ ̳T̳O̳ ̳B̳O̳T̳ ̳G̳R̳O̳U̳P̳ ⚚', url='https://t.me/mallu_movie_search')
-             ]]
+                    InlineKeyboardButton('𝐌𝐨𝐯𝐢𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥', url='https://t.me/+fAHy3KCjmtthOWRl')
+                  ],[
+                    InlineKeyboardButton('𝐌𝐨𝐯𝐢𝐞𝐬 𝐆𝐫𝐨𝐮𝐩', url='https://t.me/mallu_movie_search'),
+                    InlineKeyboardButton(' 𝐀𝐛𝐨𝐮𝐭', callback_data='about')
+                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -80,8 +83,11 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('⚚ J̳O̳I̳N̳ ̳T̳O̳ ̳B̳O̳T̳ ̳G̳R̳O̳U̳P̳ ⚚', url='https://t.me/mallu_movie_search')
-             ]]
+                    InlineKeyboardButton('𝐌𝐨𝐯𝐢𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥', url='https://t.me/+fAHy3KCjmtthOWRl')
+                  ],[
+                    InlineKeyboardButton('𝐌𝐨𝐯𝐢𝐞𝐬 𝐆𝐫𝐨𝐮𝐩', url='https://t.me/mallu_movie_search'),
+                    InlineKeyboardButton(' 𝐀𝐛𝐨𝐮𝐭', callback_data='about')
+                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
