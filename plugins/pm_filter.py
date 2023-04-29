@@ -153,16 +153,16 @@ async def next_page(bot, query):
         if settings['auto_delete']:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"), 
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"), 
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
 
         else:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"),
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
                 
@@ -173,16 +173,16 @@ async def next_page(bot, query):
         if settings['auto_delete']:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"),
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
 
         else:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"),
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
     try:
@@ -275,7 +275,7 @@ async def next_page(bot, query):
                     ],
                 )
     btn.insert(0, [
-        InlineKeyboardButton(" ʟᴀɴɢᴜᴀɢᴇs ", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
+        InlineKeyboardButton(" 𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄 ", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
 #        InlineKeyboardButton(f"🔍 {search} 🔎", callback_data="imdb1")
     ])
     try:
@@ -344,7 +344,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="☟  ꜱᴇʟᴇᴄᴛ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇꜱ  ☟", callback_data="selectlang"
+                text="☟  𝐒𝐄𝐋𝐄𝐂𝐓 𝐘𝐎𝐔𝐑 𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄  ☟", callback_data="selectlang"
             )
         ],
     )
@@ -2558,16 +2558,16 @@ async def auto_filter(client, msg, spoll=False):
         if settings['auto_delete']:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"),
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
 
         else:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"),
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
                 
@@ -2578,21 +2578,21 @@ async def auto_filter(client, msg, spoll=False):
         if settings['auto_delete']:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"),
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
 
         else:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    InlineKeyboardButton("𝐀𝐋𝐋​", callback_data=f"send_fall#files#{offset}"),
+                    InlineKeyboardButton("𝐒𝐄𝐋𝐄𝐂𝐓​", callback_data="ooooo")
                 ]
             )
 
     btn.insert(0, [
-        InlineKeyboardButton(" ʟᴀɴɢᴜᴀɢᴇs ", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
+        InlineKeyboardButton(" 𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄 ", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
     ])
 
     if offset != "":
