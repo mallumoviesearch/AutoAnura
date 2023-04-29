@@ -94,7 +94,7 @@ FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/+A9emw13aEyxkYzE1")
 MSG_ALRT = environ.get('MSG_ALRT', '𝑪𝑯𝑬𝑪𝑲 & 𝑻𝑹𝒀 𝑨𝑳𝑳 𝑴𝒀 𝑭𝑬𝑨𝑻𝑼𝑹𝑬𝑺')
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 
-LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada"]
+LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada", "Multi"]
 IMDB_DLT_TIME = int(environ.get('IMDB_DLT_TIME', 600))
 
 HRK_APP_NAME = environ.get('HRK_APP_NAME', 'mybots')
