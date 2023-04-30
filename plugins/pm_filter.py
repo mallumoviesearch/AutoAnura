@@ -2785,34 +2785,62 @@ async def advantage_spell_chok(client, msg):
         await asyncio.sleep(40)
         await k.delete()
         return
-    movielist = [movie.get('title') for movie in movies]
+    movielist += [movie.get('title') for movie in movies]
+#    movielist += [f"{movie.get('title')} {movie.get('year')}" for movie in movies]
+    imdb = await get_poster(content) if IMDB else None
     SPELL_CHECK[mv_id] = movielist
     btn = [
+
         [
+
             InlineKeyboardButton(
+
                 text=movie_name.strip(),
+
                 callback_data=f"spol#{reqstr1}#{k}",
+
             )
+
         ]
+
         for k, movie_name in enumerate(movielist)
+
     ]
-    btn.append([InlineKeyboardButton(text="✘ ᴄʟᴏsᴇ ✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
+
+    btn.append([InlineKeyboardButton(text=f"𝐂𝐥𝐨𝐬𝐞 𝐒𝐞𝐚𝐫𝐜𝐡", callback_data="close_data")])
+
+#    btn.append([f"𝐂𝐥𝐨𝐬𝐞 𝐒𝐞𝐚𝐫𝐜𝐡", callback_data="close_data", False])        
+
+    btn.insert(0, [
+
+        InlineKeyboardButton("𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐂𝐡𝐞𝐜𝐤", url=f"https://google.com/search?q={mv_rqst}"),
+
+        InlineKeyboardButton("𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/+fAHy3KCjmtthOWRl")
+
+    ])
+
+#    btn.insert(5, [
+
+#        InlineKeyboardButton(f"𝐂𝐥𝐨𝐬𝐞 𝐒𝐞𝐚𝐫𝐜𝐡", callback_data="close_data")
+
+#    ])
+
+    
+
+      
+
     spell_check_del = await msg.reply_text(
-        text=(script.CUDNT_FND.format(mv_rqst)),
-        reply_markup=InlineKeyboardMarkup(btn),
-        reply_to_message_id=msg.id
-    )
-    try:
-        if settings['auto_delete']:
-            await asyncio.sleep(120)
-            await spell_check_del.delete()
-    except KeyError:
-            grpid = await active_connection(str(message.from_user.id))
-            await save_group_settings(grpid, 'auto_delete', True)
-            settings = await get_settings(message.chat.id)
-            if settings['auto_delete']:
-                await asyncio.sleep(120)
-                await spell_check_del.delete()
+        text=(script.CUDNT_FND.format(mv_rqst)),
+
+        reply_markup=InlineKeyboardMarkup(btn))
+
+    awaicaption=(script.CUDNT_FND.format(mv_rqst))
+
+    await asyncio.sleep(60)
+
+    await spell_check_del.delete()
+
+    await msg.delete()
 
 
 async def manual_filters(client, message, text=False):
