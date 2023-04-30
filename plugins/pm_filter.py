@@ -2829,8 +2829,11 @@ async def advantage_spell_chok(client, msg):
 
       
 
-    spell_check_del = await msg.reply_text(
-        text=(script.CUDNT_FND.format(mv_rqst)),
+    spell_check_del = await msg.reply_photo(
+
+        photo=('https://telegra.ph/file/5e2d4418525832bc9a1b9.jpg'),
+
+        caption=(script.CUDNT_FND.format(mv_rqst)),
 
         reply_markup=InlineKeyboardMarkup(btn))
 
@@ -2841,6 +2844,7 @@ async def advantage_spell_chok(client, msg):
     await spell_check_del.delete()
 
     await msg.delete()
+
 
 
 async def manual_filters(client, message, text=False):
