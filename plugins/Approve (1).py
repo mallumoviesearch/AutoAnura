@@ -32,7 +32,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 
 
 
-AUTH_CHANNEL = [int(pr0fess0r_99) for pr0fess0r_99 in environ.get("AUTH_CHANNEL", "-1001687739032").split()]
+
 TEXT = environ.get("APPROVED_WELCOME_TEXT", "ʜᴇʟʟᴏ {mention} ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴄʜᴀɴɴᴇʟ. {title}\n\nᴏɴʟʏ ɴᴇᴡ ᴀɴᴅ ʟᴏᴡ ꜱɪᴢᴇ ᴍᴏᴠɪᴇ ᴀᴠᴀɪʟᴀʙʟᴇ. ᴇɴᴊᴏʏɪɴɢ🔥🔥")
 APPROVED = environ.get("APPROVED_WELCOME", "off").lower()
 
@@ -43,7 +43,7 @@ async def start(client, Message):
               [ InlineKeyboardButton("➕️ Add Me To Your Chat ➕️", url=f"http://t.me/{approvedbot.username}?startgroup=botstart") ]]
     await client.send_message(chat_id=message.chat.id, text=f"**__Hello {message.from_user.mention} Iam Auto Approver Join Request Bot Just [Add Me To Your Group Channnl](http://t.me/{approvedbot.username}?startgroup=botstart) || Repo https://github.com/PR0FESS0R-99/Auto-Approved-Bot||**__", reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)
 
-@Client.on_chat_join_request((filters.group | filters.channel) & filters.chat(AUTH_CHANNEL) if AUTH_CHANNEL else (filters.group | filters.channel))
+@Client.on_chat_join_request((filters.group | filters.channel) 
 async def autoapprove(client, message: ChatJoinRequest):
     chat=message.chat # Chat
     user=message.from_user # User
