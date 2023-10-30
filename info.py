@@ -55,7 +55,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Anurag_files')
 
 # Others
-VERIFY = bool(environ.get('VERIFY', False"))
+VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'https://paisakamalo.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'a5a509a953dbd4c0e2f5ff14e20f456a132dc4c7')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', "True"))
