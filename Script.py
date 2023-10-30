@@ -199,11 +199,7 @@ Nᴀᴍᴇ - {}"""
 
     IMDB_TEMPLATE_TXT = """
 
-🎬 Title: <a href={url}>{title}</a>
-🗓 Year: {year}
-🔊 Language:<a href={url}/ratings>{languages}</a>
-💿 Quality : HDRip 
-🔗 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗟𝗜𝗡𝗞 ☞
+🎬movie
 """
 
     BR_TEMPLATE_TXT = """
